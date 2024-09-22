@@ -1,0 +1,175 @@
+class ParentingAssistantAgent:
+    def __init__(self):
+        self.child_name = ""
+        self.child_age_months = 0
+
+    def set_child_name(self, name):
+        self.child_name = name
+
+    def set_child_age_months(self, age_months):
+        self.child_age_months = int(age_months)
+
+    def get_parenting_tips(self):
+        tips = {
+            0: "Congratulations on your new baby! Remember to bond with your baby through skin-to-skin contact.",
+            1: "Your baby is starting to recognize your face! Make eye contact and talk to your baby often.",
+            2: "Your baby may be ready for solid foods soon. Consult your pediatrician for guidance.",
+            3: "Engage in tummy time to help your baby strengthen neck and shoulder muscles.",
+            4: "Your baby may start rolling over. Always supervise tummy time.",
+            5: "Encourage babbling by talking and singing to your baby frequently.",
+            6: "Introduce solid foods as a supplement to breast milk or formula. Consult your pediatrician.",
+            7: "Play peek-a-boo and other interactive games to develop social skills.",
+            8: "Provide safe objects for your baby to grasp and explore.",
+            9: "Encourage crawling by placing toys just out of reach.",
+            10: "Your baby may start pulling up to stand. Ensure your home is baby-proofed.",
+            11: "Encourage first words by reading to your baby and naming objects.",
+            12: "Help your baby practice walking by holding their hands and providing support.",
+        }
+        return tips.get(self.child_age_months, "No tips available for this age.")
+
+    def track_growth_and_development(self):
+        milestones = {
+            0: "Lifts head when lying on stomach.",
+            1: "Smiles responsively.",
+            2: "Rolls over in both directions.",
+            3: "Begins to recognize familiar faces and objects at a distance.",
+            4: "Rolls over from tummy to back.",
+            5: "Begins to sit with support.",
+            6: "Starts to respond to own name and makes sounds to show joy and displeasure.",
+            7: "Begins to transfer objects from one hand to the other.",
+            8: "Sits without support and starts to crawl.",
+            9: "Stands with support and may start to crawl.",
+            10: "Cruises or walks holding onto furniture.",
+            11: "Stands alone and may take a few steps without holding on.",
+            12: "Walks a few steps without support and starts to follow simple directions.",
+        }
+        return milestones.get(self.child_age_months, "No milestones available for this age.")
+
+    def recommend_activities(self):
+        activities = {
+            0: "Spend lots of time cuddling and talking to your baby.",
+            1: "Use toys with contrasting colors to help develop your baby's vision.",
+            2: "Sing nursery rhymes and play peek-a-boo.",
+            3: "Provide colorful and textured toys to stimulate your baby's senses.",
+            4: "Use a soft mat for tummy time and encourage reaching for toys.",
+            5: "Play music and encourage your baby to move to the rhythm.",
+            6: "Introduce simple picture books and talk about the images.",
+            7: "Play interactive games like pat-a-cake.",
+            8: "Provide stacking toys and encourage your baby to build towers.",
+            9: "Encourage crawling by placing toys just out of reach.",
+            10: "Help your baby practice standing by holding their hands.",
+            11: "Play with push toys to encourage walking.",
+            12: "Read interactive books and sing songs with hand movements.",
+        }
+        return activities.get(self.child_age_months, "No activities recommended for this age.")
+
+    def health_advice(self):
+        health_tips = {
+            0: "Ensure regular pediatrician check-ups and keep up with vaccinations.",
+            1: "Monitor your baby's weight gain and growth patterns.",
+            2: "Maintain proper hygiene to prevent infections.",
+            3: "Ensure your baby gets plenty of tummy time to develop strong muscles.",
+            4: "Schedule regular check-ups with your pediatrician to monitor development.",
+            5: "Start brushing your baby's teeth with a soft toothbrush and water.",
+            6: "Introduce solid foods gradually and watch for any allergic reactions.",
+            7: "Keep small objects out of reach to prevent choking hazards.",
+            8: "Ensure your baby is getting enough iron through diet or supplements.",
+            9: "Baby-proof your home as your baby becomes more mobile.",
+            10: "Encourage safe exploration and provide a variety of textures and objects.",
+            11: "Maintain a routine for sleep and feeding to help your baby feel secure.",
+            12: "Continue regular pediatric check-ups and vaccinations as recommended.",
+        }
+        return health_tips.get(self.child_age_months, "No health advice available for this age.")
+
+    def feeding_schedule(self):
+        feeding = {
+            0: "Breastfeed or formula feed on demand, usually 8-12 times a day.",
+            1: "Continue breastfeeding or formula feeding, introducing new foods gradually.",
+            2: "Start with iron-fortified single-grain cereals mixed with breast milk or formula.",
+            3: "Continue breastfeeding or formula feeding on demand.",
+            4: "Breast milk or formula should still be the main source of nutrition.",
+            5: "Consider introducing small amounts of pureed vegetables or fruits.",
+            6: "Begin to introduce solid foods like rice cereal or pureed vegetables and fruits.",
+            7: "Offer solid foods two to three times a day while continuing breastfeeding or formula.",
+            8: "Increase the variety of solid foods and introduce finger foods.",
+            9: "Offer three meals a day and continue breastfeeding or formula.",
+            10: "Encourage self-feeding with small, soft finger foods.",
+            11: "Offer a balanced diet with a variety of fruits, vegetables, proteins, and grains.",
+            12: "Gradually introduce more textured foods and encourage drinking from a sippy cup.",
+        }
+        return feeding.get(self.child_age_months, "No feeding schedule available for this age.")
+
+    def sleep_patterns(self):
+        sleep_tips = {
+            0: "Newborns sleep about 16-17 hours a day, in periods of 2-4 hours.",
+            1: "Encourage longer night-time sleep and shorter daytime naps.",
+            2: "Establish a consistent bedtime routine to help your baby sleep better.",
+            3: "Ensure your baby gets 14-17 hours of sleep, including naps.",
+            4: "Maintain a consistent bedtime routine and soothing environment.",
+            5: "Encourage regular nap times during the day.",
+            6: "Your baby may start sleeping longer stretches at night.",
+            7: "Establish a calming bedtime routine with activities like reading.",
+            8: "Ensure your baby gets 12-15 hours of sleep, including naps.",
+            9: "Encourage a consistent sleep schedule and bedtime routine.",
+            10: "Provide a comfortable and safe sleep environment.",
+            11: "Your baby may transition to fewer naps; ensure adequate night sleep.",
+            12: "Aim for 11-14 hours of total sleep, including naps.",
+        }
+        return sleep_tips.get(self.child_age_months, "No sleep patterns available for this age.")
+    
+    def ask_questions(self):
+        questions = {
+            "Is the child eating well?": "eating_well",
+            "Is the child sleeping well?": "sleeping_well",
+            "Is the child showing any signs of illness?": "signs_of_illness",
+            "Is the child reaching age-appropriate milestones?": "reaching_milestones",
+        }
+        responses = {}
+        for question, key in questions.items():
+            answer = input(question + " (yes/no): ").strip().lower()
+            responses[key] = answer
+            if answer == 'no':
+                print(self.provide_solutions(key))
+        return responses
+
+    def provide_solutions(self, issue):
+        solutions = {
+            "eating_well": "Try introducing a variety of foods to find what your baby likes. Ensure regular feeding times and consult your pediatrician if problems persist.",
+            "sleeping_well": "Establish a consistent bedtime routine, create a calming sleep environment, and avoid stimulating activities before bed.",
+            "signs_of_illness": "Monitor the child's symptoms closely, ensure they are well-hydrated, and consult a pediatrician if symptoms persist or worsen.",
+            "reaching_milestones": "Engage in activities that promote development, provide plenty of opportunities for practice, and consult your pediatrician if you have concerns.",
+        }
+        return solutions.get(issue, "No solution available for this issue.")
+
+# Create an instance of ParentingAssistantAgent
+agent = ParentingAssistantAgent()
+
+# Get child's name from user
+child_name = input("Enter child's name: ")
+agent.set_child_name(child_name)
+
+# Get child's age from user
+child_age_months = input("Enter child's age in months: ")
+agent.set_child_age_months(child_age_months)
+
+# Print parenting tips, growth and development milestone, and recommended activities
+print("Parenting tips:")
+print(agent.get_parenting_tips())
+
+print("\nChild growth and development milestone:")
+print(agent.track_growth_and_development())
+
+print("\nRecommended activities:")
+print(agent.recommend_activities())
+
+print("\nHealth advice:")
+print(agent.health_advice())
+
+print("\nFeeding schedule:")
+print(agent.feeding_schedule())
+
+print("\nSleep patterns:")
+print(agent.sleep_patterns())
+
+print("\nAdditional Questions and Solutions:")
+agent.ask_questions()
